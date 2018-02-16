@@ -1,0 +1,25 @@
+if ( num_length < string_length )        				// num_length (less) than or equal to string_length
+{
+	//  Testing of equality between odometer and full_odometer  //
+	if ( odometer[0] != full_odometer[0] )
+		equal_odometer = 0;
+
+
+	//  Increment  //
+	odometer[0] += 1;
+
+	++num_of_equal;
+}
+
+else            						// num_length less than or (equal) to string_length
+{
+	//  Testing of equality between odometer and display  //
+	if ( odometer[0] != display[0] )
+		equal_odometer = 0;
+
+
+	//  Increment  //
+	odometer[0] += 1;
+
+	++num_of_equal;
+}

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1426531590 source:e:\benutzer\mohamed\eigene dateien\arbeit\os applications\exercises\uri\diet plan\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,39 @@
+1. prompt
+	1. write "Enter your Age in the Form (DD.MM.YYYY): "
+2. input your birth
+	1. read out the input (assuming its correct) in the form of a string
+	2. get day, month and year in a list variable
+3. calculate the birth in days
+	1. there are three cases:
+		1. difference between year number is two years or more
+		2. difference between year number is one year
+		3. difference between year number is zero
+	   check to see which of the three is the case
+	2. if the first is the case then there are three parts:
+		1. calculate the days in the first year
+		2. calculate the days in the last year
+		3. calculate the days in between
+	3. the second case:
+		1. calculate the days in the first year
+		2. calculate the days in the last year
+	4. the third case:
+		calculate the days between the birth and date
+4. output the age
+5. run the steps again
+
+
+Variables:
+
+inp (string to hold the input)
+birth (list to hold the day, month and year)
+date (list to hold the current date)
+age (int holding your age in days)
+leap (list to hold all the leap yeary)
+
+
+
+
+
+
+
+

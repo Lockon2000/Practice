@@ -1,0 +1,5 @@
+unsigned int n, i, k, j ;
+unsigned int string_length, num_length ;
+unsigned long long num_of_equal ;
+char display[100005], odometer[100005], full_odometer[100005] ;
+_Bool equal_odometer, end_of_odd_cycle ;

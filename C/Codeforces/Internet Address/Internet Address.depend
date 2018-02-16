@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1426675635 source:e:\benutzer\mohamed\eigene dateien\arbeit\os applications\exercises\codeforces\internet address\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

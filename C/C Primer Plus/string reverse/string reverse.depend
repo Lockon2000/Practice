@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1415719679 source:e:\benutzer\mohamed\eigene dateien\arbeit\beispiele\string reverse\main.c
+	<stdio.h>
+	<string.h>
+

@@ -1,0 +1,58 @@
+if ( num_lenght < string_lenght )					// num_lenght (less) than or equal to string_lenght
+{
+	//  Testing of equality between odometer and full_odometer  //
+	for (k = 0 ; k < num_lenght ; ++k)
+	{
+		if ( odometer[k] != full_odometer[k] )
+			equal_odometer = 0 ;
+	}
+
+
+	//  Halfs Increment  //
+	for (n = (num_lenght/2 - 1),j = (num_lenght/2) ; n >= 0 ; --n,++i)
+	{
+		if ( odometer[n] == '9' )
+			odometer[n] = '0';
+		else
+			odometer[n] += 1 ;
+
+		if ( odometer[j] == '9' )
+			odometer[j] = '0';
+		else
+		{
+			odometer[j] += 1 ;
+			break;
+		}
+	}
+
+	++num_of_equal;
+}
+else								// num_lenght less than or (equal) to string_lenght
+{
+	//  Testing of equality between odometer and display  //
+	for (k = 0 ; k <= (num_lenght/2 - 1) ; ++k)
+	{
+		if ( odometer[k] != display[k] )
+			equal_odometer = 0 ;
+	}
+
+
+	//  Halfs Increment //
+	for (n = (num_lenght/2 - 1),j = (num_lenght/2) ; n >= 0 ; --n,++i)
+	{
+		if ( odometer[n] == '9' )
+			odometer[n] = '0';
+		else
+			odometer[n] += 1 ;
+
+		if ( odometer[j] == '9' )
+			odometer[j] = '0';
+		else
+		{
+			odometer[j] += 1 ;
+			break;
+		}
+	}
+
+	++num_of_equal;
+}

@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	int n, i, j, k ;
+	int string_lenth, num_lenth, leading_zero ;
+	unsigned long long num_of_equal ;
+	char display[100001], odometer[100001] ;
+	_Bool digit_equal, meter_equal ;
+
+
+	while (scanf("%s", display) != EOF)
+	{
+		string_lenth = strlen(display);
+
+		for (n = 0 ; n < string_lenth ; ++n)
+			odometer[n] = '0';
+		odometer[n] = '\0';
+
+		num_of_equal = 0LLU;
+
+		do
+		{
+		for (k = (string_lenth - 1) ; k >= 0 ; --k)                   // Addition
+		{
+			if ( odometer[k] == '9' )
+				odometer[k] = '0';
+			else
+			{
+				odometer[k] += 1;
+				break;
+			}
+		}
+
+		leading_zero = 0;
+		num_lenth = string_lenth;
+		for (k = 0 ; k < string_lenth ; ++k)                           // determining num_lenth
+        {
+            if ( odometer[k] != '0' )
+            {
+                num_lenth = string_lenth - k;
+                leading_zero = k;
+                break;
+
+            }
+        }
+
+		digit_equal = 1;                                               // Testing
+		for (i = leading_zero,j = 1 ; i < (num_lenth / 2) + leading_zero ; ++i,++j)
+		{
+			if ( odometer[i] != odometer[string_lenth-j] )
+			{
+				digit_equal = 0;
+				break;
+			}
+		}
+
+		if (digit_equal)
+			++num_of_equal;
+
+		meter_equal = 1;                                                // Ending
+		for (k = 0 ; k < string_lenth ; ++k)
+		{
+			if ( odometer[k] != display[k] )
+				meter_equal = 0;
+		}
+
+		} while ( !meter_equal );
+
+		printf("%llu\n", num_of_equal % 4294967296);
+	}
+
+	return 0;
+}

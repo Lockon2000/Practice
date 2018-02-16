@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1413731453 source:e:\benutzer\mohamed\eigene dateien\arbeit\beispiele\toobig float\main.c
+	<stdio.h>
+	<stdlib.h>
+	<complex.h>
+

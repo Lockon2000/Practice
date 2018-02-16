@@ -1,0 +1,29 @@
+end_of_cycle = 1 ;
+
+do
+{
+	//  Wings Increment  //
+	for (n = (num_length/2 - 1),i = (num_length/2 + 1) ; n >= 0 ; --n,++i)
+	{
+		if (odometer[n] == '9' )
+			odometer[n] = '0';
+		else
+			odometer[n] += 1;
+
+		if ( odometer[i] == '9' )
+			odometer[i] = '0';
+		else
+		{
+			odometer[i] += 1;
+			break;
+		}
+	}
+
+	++num_of_equal;
+
+	//  testing od meeting end of cycle  //
+	for (n = 0 ; n < (num_length/2 - 1) ; ++n)
+	{
+		if ( odometer[n] != full_odometer[n] )
+			end_of_cycle = 0 ;
+	}

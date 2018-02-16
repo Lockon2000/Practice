@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1416218942 source:e:\benutzer\mohamed\eigene dateien\arbeit\exercises\uri\awesome odometer\main.c
+	<stdio.h>
+	<string.h>
+	<math.h>
+

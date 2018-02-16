@@ -1,0 +1,244 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+	int n, i, k, j ;
+	int string_lenth, num_lenth ;
+	unsigned long long num_of_equal ;
+	char display[100001], odometer[100001], full_odometer[100001] ;
+	_Bool equal_odometer, end_of_cycle ;
+
+
+	while (scanf("%s", display) != EOF)
+	{
+		string_lenth = strlen(display);
+		k = 0;
+		num_of_equal = 0;
+
+		for (num_lenth = 1 ; num_lenth <= string_lenth ; ++num_lenth)
+        {
+            //  Initializing Odometer and full_Odometer  //
+            for (i = 0 ; i < num_lenth ; ++i)
+            {
+                odometer[i] = '0';
+                full_odometer[i] = '9';
+            }
+            odometer[i] = '\0';
+            full_odometer[i] = '\0';
+
+
+            do
+            {
+            equal_odometer = 1;
+
+            if ( num_lenth == 1 )           // num_lenth = (1) or even or odd
+            {
+            if ( num_lenth < string_lenth )         // num_lenth (less) than or equal to string_lenth
+            {
+                //  Increment  //
+                odometer[0] += 1;
+
+                ++num_of_equal;
+
+                //  Testing of equality between odometer and full_odometer  //
+                if ( odometer[0] != full_odometer[0] )
+                    equal_odometer = 0;
+            }
+
+            else            // num_lenth less than or (equal) to string_lenth
+            {
+                //  Increment  //
+                odometer[0] += 1;
+
+                ++num_of_equal;
+
+                //  Testing of equality between odometer and full_odometer  //
+                if ( odometer[0] != display[0] )
+                    equal_odometer = 0;
+            }
+            }
+
+
+            else if ( num_lenth % 2 == 0 )      // num_lenth = 1 or (even) or odd
+            {
+            if ( num_lenth < string_lenth )         // num_lenth (less) than or equal to string_lenth
+            {
+                //  Halfs Increment //
+                for (n = (num_lenth/2 -1),i = (num_lenth/2) ; n >= 0 ; --n,++i)
+                {
+                    if ( odometer[n] == '9' )
+                        odometer[n] = '0';
+                    else
+                    {
+                        odometer[n] += 1;
+                    }
+
+                    if ( odometer[i] == '9' )
+                    {
+                        odometer[i] = '0';
+                    }
+
+                    else
+                    {
+                        odometer[i] += 1;
+                        break;
+                    }
+                }
+
+                ++num_of_equal;
+
+                //  Testing of equality between odometer and full_odometer  //
+                for (j = 0 ; j < num_lenth ; ++j)
+                {
+                    if ( odometer[j] != full_odometer[j] )
+                        equal_odometer = 0;
+
+                }
+            }
+
+            else            // num_lenth less than or (equal) to string_lenth
+            {
+
+                //  Testing of equality between odometer and display  //
+                for (j = 0 ; j < num_lenth ; ++j)
+                {
+                    if ( odometer[j] != display[j] )
+                        equal_odometer = 0;
+                }
+
+
+                //  Halfs Increment //
+                for (n = (num_lenth/2 -1),i = (num_lenth/2) ; n >= k ; --n,++i)
+                {
+                    if ( n == k && odometer[n] == display[k] )
+                        ++k;
+
+                    if ( odometer[n] == '9' )
+                        odometer[n] = '0';
+                    else
+                        odometer[n] += 1;
+
+                    if (odometer[i] == '9')
+                        odometer[i] = '0';
+                    else
+                    {
+                        odometer[i] += 1;
+                        break;
+                    }
+                }
+
+                ++num_of_equal;
+
+            }
+            }
+
+
+            else            // num_lenth = 1 or even or (odd)
+            {
+            if ( num_lenth < string_lenth )         // num_lenth (less) than or equal to string_lenth
+            {
+                //  Heart Increment  //
+                odometer[num_lenth/2] += 1;
+
+                end_of_cycle = 1;
+
+                do
+                {
+                //  Wings Increment  //
+                for (n = (num_lenth/2 - 1),i = (num_lenth/2 + 1) ; n >= 0 ; --n,++i)
+                {
+                    if ( odometer[n] == '9' )
+                        odometer[n] = '0';
+                    else
+                    {
+                        odometer[n] += 1;
+                    }
+
+                    if ( odometer[i] == '9' )
+                        odometer[i] = '0';
+                    else
+                    {
+                        odometer[i] += 1;
+                        break;
+                    }
+                }
+
+                ++num_of_equal;
+
+                //  Testing of meeting end of cycle  //
+                for (n = (num_lenth/2 - 1),i = (num_lenth/2 + 1) ; n >= 0 ; --n,++i)
+                {
+                    if ( odometer[n] != full_odometer[i] )
+                        end_of_cycle = 0;
+                }
+
+                //  Testing of equality between odometer and full_odometer  //
+                for (j = 0 ; j < num_lenth ; ++j)
+                {
+                    if ( odometer[j] != full_odometer[j] )
+                        equal_odometer = 0;
+                }
+
+                } while ( !end_of_cycle );
+            }
+
+            else                // num_lenth less than or (equal) to string_lenth
+            {
+                //  Heart Increment  //
+                odometer[num_lenth/2] += 1;
+
+                end_of_cycle = 1;
+
+                do
+                {
+                //  Wings Increment  //
+                for (n = (num_lenth/2 - 1),i = (num_lenth/2 + 1) ; n >= k ; --n,++i)
+                {
+                    if ( n == k && odometer[n] == display[k] )
+                        ++k;
+
+                    if ( odometer[n] == '9' )
+                        odometer[n] = '0';
+                    else
+                    {
+                        odometer[n] += 1;
+                    }
+
+                    if ( odometer[i] == '9' )
+                        odometer[i] = '0';
+                    else
+                    {
+                        odometer[i] += 1;
+                        break;
+                    }
+                }
+
+                ++num_of_equal;
+
+                //  Testing of meeting end of cycle  //
+                for (n = (num_lenth/2 - 1),i = (num_lenth/2 + 1) ; n >= k ; --n,++i)
+                {
+                    if ( odometer[n] != full_odometer[i] )
+                        end_of_cycle = 0;
+                }
+
+                //  Testing of equality between odometer and full_odometer  //
+                for (j = 0 ; j < num_lenth ; ++j)
+                {
+                    if ( odometer[j] != full_odometer[j] )
+                        equal_odometer = 0;
+                }
+
+                } while ( !end_of_cycle );
+            }
+            }
+            } while ( !equal_odometer );
+        }
+
+
+        printf("%llu\n", num_of_equal % 4294967296);
+	}
+
+	return 0;
+}

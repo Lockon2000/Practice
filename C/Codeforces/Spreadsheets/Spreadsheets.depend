@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1419958561 source:e:\benutzer\mohamed\eigene dateien\arbeit\high level languages\codeforces\spreadsheets\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1433860632 source:c:\users\mohamed\skydrive\arbeit\os applications\cli applications\c++\exercises\uri\help cupid\main.cpp
+	<iostream>
+	<cmath>
+	<vector>
+

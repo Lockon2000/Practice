@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1415393905 source:e:\benutzer\mohamed\eigene dateien\arbeit\exercises\uri\hard to belive but true\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<ctype.h>
+	<stdbool.h>
+
+1415395289 source:e:\benutzer\mohamed\eigene dateien\arbeit\high level languages\exercises\uri\hard to belive but true\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<ctype.h>
+	<stdbool.h>
+

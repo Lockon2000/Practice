@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1433378736 source:c:\users\mohamed\skydrive\arbeit\os applications\cli applications\c++\exercises\uri\lexsim - sintatic and lexical avaliator\main.cpp
+	<iostream>
+	<stack>
+

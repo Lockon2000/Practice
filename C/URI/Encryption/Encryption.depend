@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1415719671 source:e:\benutzer\mohamed\eigene dateien\arbeit\exercises\uri\encryption\main.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+

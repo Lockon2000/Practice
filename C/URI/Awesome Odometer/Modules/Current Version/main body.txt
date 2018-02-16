@@ -1,0 +1,55 @@
+while ( scanf("%s", display) != EOF )
+{
+	string_lenght = strlen(display);
+	num_of_equal = 0 ;
+
+	if ( display[0] == '0' )
+	{
+		printf("%llu", num_of_equal % (int) pow(2,32));
+		continue;
+	}
+
+
+
+	//  generating all possible numbers meeting the criteria  //
+	for (num_lenght = 1 ; num_lenght <= string_lenght ; ++num_lenght)
+	{
+		//  Initializing odometer and full_odometer //
+		odometer[0] = odometer[num_lenght - 1] = '1';
+		full_odometer[0] = full_odometer[num_lenght - 1] = '9';
+		for (i = 1 ; i < (num_lenght - 1) ; ++i)
+		{
+			odometer[i] = '0';
+			full_odometer[i] = '9';
+		}
+		odometer[i + 1] = '\0';
+		full_odometer[i + 1] = '\0';
+
+
+		//  the cycle for a specific num_lenght  //
+		do
+		{
+			equal_odometer = 1 ;
+
+		
+			if ( num_lenght == 1 )						// num_lenght = (1) of even or odd
+			{
+				..........
+			}
+
+		
+			else if ( num_lenght % 2 == 0 )					// num_lenght = 1 of (even) or odd
+			{
+				..........
+			}
+
+
+			else								// num_lenght = 1 of even or (odd)
+			{
+				..........
+			}
+		} while ( !equal_odometer );
+	}
+
+	printf("%llu", num_of_equal % (int) pow(2,32));
+}

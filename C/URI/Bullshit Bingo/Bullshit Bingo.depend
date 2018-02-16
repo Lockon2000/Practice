@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1417354457 source:e:\benutzer\mohamed\eigene dateien\arbeit\high level languages\exercises\uri\bullshit bingo\main.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	<stdbool.h>
+

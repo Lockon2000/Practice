@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1414965714 source:e:\benutzer\mohamed\eigene dateien\arbeit\beispiele\word count\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1414966313 source:e:\benutzer\mohamed\eigene dateien\arbeit\high level languages\book exercises\c primer plus\word count\main.c
+	<stdio.h>
+	<stdlib.h>
+

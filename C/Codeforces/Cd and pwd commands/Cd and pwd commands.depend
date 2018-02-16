@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1424202029 source:e:\benutzer\mohamed\eigene dateien\arbeit\os applications\exercises\codeforces\cd and pwd commands\main.c
+	<stdio.h>
+	<string.h>
+
+1427380993 source:c:\users\mohamed\skydrive\arbeit\os applications\cli applications\exercises\codeforces\cd and pwd commands\main.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+
