@@ -1,4 +1,4 @@
-a = [2, 4, 3, 5, 1]
+a = [2, 4, 3, 4, 2]
 
 
 # Time complexity exceeding O(n) but space complexity O(1)
@@ -23,15 +23,15 @@ def firstDuplicate2(a):
 
 
 # Time complexity O(n) and space complexity O(1) -- Winner!!
-def firstDuplicate3(a):
-    b = len(a)
+def firstDuplicate3(array):
+    length = len(array)
     
-    for i in a:
-        if i > b:
-            i -= b
+    for i in array:
+        if i > length:
+            i -= length
 
-        if a[i-1] <= b:
-            a[i-1] += b
+        if array[i-1] <= length:
+            array[i-1] += length
         else:
             return i
     
