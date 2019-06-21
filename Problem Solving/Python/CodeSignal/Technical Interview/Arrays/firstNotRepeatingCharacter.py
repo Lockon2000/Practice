@@ -1,5 +1,3 @@
-import timeit
-
 # Wrong answer
 def firstNotRepeatingCharacter1(s):
     for i in range(len(s)):
@@ -47,16 +45,28 @@ def firstNotRepeatingCharacter4(s):
             return c
     return '_'
 
-# s = "abacabad"
+# Best Answer so far. It is correct, elegant, intuitiv and also the fastest answer
+def firstNotRepeatingCharacter5(s):
+    d = {}
+    for c in s:
+        d[c] = d.get(c, 0) + 1
+    for c in d:
+        if d[c] == 1:
+            return c
+    return '_'
 
-# print(firstNotRepeatingCharacter4(s))
 
+import timeit
+s = ("ajfsakvnasndhzyurpwiaffjaskduwerpoisadjkfljwerlkuasidfajfsakvnasndhzyurpwiaffjaskduwerpoisadjkfljwe"
+     "rlkuasidfajfsakvnasndhzyurpwiaffjaskduwerpoisadjkfljwerlkuasidfajfsakvnasndhzyurpwiaffjaskduwerpois"
+     "adjkfljwerlkuasidfajfsakvnasndhzyurpwiaffjaskduwerpoisadjkfljwerlkuasidfajfsakvnasndhzyurpwiaffjask"
+     "duwerpoisadjkfljwerlkuasidfajfsakvnasndhzyurpwiaffjaskduwerpoisadjkfljwerlkuasidfajfsakvnasndhzyurp"
+     "wiaffjaskduwerpoisadjkfljwerlkuasidfajfsakvnasndhzyurpwiaffjaskduwerpoisadjkfljwerlkuasidfkjsndlsjf")
+setup = ("from __main__ import firstNotRepeatingCharacter1, firstNotRepeatingCharacter2,"
+      " firstNotRepeatingCharacter3, firstNotRepeatingCharacter4, firstNotRepeatingCharacter5, s")
 
-
-s = "ajfsakvnasndhzyurpwiaffjaskduwerpoisadjkfljwerlkuasidfajfsakvnasndhzyurpwiaffjaskduwerpoisadjkfljwerlkuasidfajfsakvnasndhzyurpwiaffjaskduwerpoisadjkfljwerlkuasidfajfsakvnasndhzyurpwiaffjaskduwerpoisadjkfljwerlkuasidfajfsakvnasndhzyurpwiaffjaskduwerpoisadjkfljwerlkuasidfajfsakvnasndhzyurpwiaffjaskduwerpoisadjkfljwerlkuasidfajfsakvnasndhzyurpwiaffjaskduwerpoisadjkfljwerlkuasidfajfsakvnasndhzyurpwiaffjaskduwerpoisadjkfljwerlkuasidfajfsakvnasndhzyurpwiaffjaskduwerpoisadjkfljwerlkuasidf"
-st = "from __main__ import firstNotRepeatingCharacter1, firstNotRepeatingCharacter2, firstNotRepeatingCharacter3, firstNotRepeatingCharacter4, s"
-
-print(timeit.timeit("firstNotRepeatingCharacter1(s)", setup=st, number=1000))
-print(timeit.timeit("firstNotRepeatingCharacter2(s)", setup=st, number=1000))
-print(timeit.timeit("firstNotRepeatingCharacter3(s)", setup=st, number=1000))
-print(timeit.timeit("firstNotRepeatingCharacter4(s)", setup=st, number=1000))
+print(timeit.timeit("firstNotRepeatingCharacter1(s)", setup=setup, number=1000))
+print(timeit.timeit("firstNotRepeatingCharacter2(s)", setup=setup, number=1000))
+print(timeit.timeit("firstNotRepeatingCharacter3(s)", setup=setup, number=1000))
+print(timeit.timeit("firstNotRepeatingCharacter4(s)", setup=setup, number=1000))
+print(timeit.timeit("firstNotRepeatingCharacter5(s)", setup=setup, number=1000))

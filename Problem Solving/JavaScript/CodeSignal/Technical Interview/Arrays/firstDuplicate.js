@@ -1,5 +1,4 @@
 // Time Complexity O(n) and Space Complexity O(1)
-
 function firstDuplicate(a) {
     let length = a.length
     

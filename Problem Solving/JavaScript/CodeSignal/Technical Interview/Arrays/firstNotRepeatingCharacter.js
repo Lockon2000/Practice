@@ -32,12 +32,11 @@ function firstNotRepeatingCharacter(s) {
     return result;
 }
 
-// Much faster, but less understandable
-
+// Much faster and more elegent
 firstNotRepeatingCharacter = s => {
     r = {}
     for (e of s)
-        r[e] = r[e] ? r[e]+1 : 1
+        r[e] = r[e] ? r[e]+1 : 1  // or r[e] = -~r[e]
     for (e in r)
         if (r[e] == 1)
             return e

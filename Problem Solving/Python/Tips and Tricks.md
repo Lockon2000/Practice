@@ -1,0 +1,1 @@
+* As of CPython 3.6 insertion order of keys in dicts is preserved. It was an implementation detail at that point. With Python 3.7 this feature was included in the Standard itself. See [this](https://stackoverflow.com/questions/39980323/are-dictionaries-ordered-in-python-3-6/39980744) for more details.
