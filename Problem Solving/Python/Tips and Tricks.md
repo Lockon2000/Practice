@@ -1,1 +1,3 @@
 * As of CPython 3.6 insertion order of keys in dicts is preserved. It was an implementation detail at that point. With Python 3.7 this feature was included in the Standard itself. See [this](https://stackoverflow.com/questions/39980323/are-dictionaries-ordered-in-python-3-6/39980744) for more details.
+
+* A shallow copy of a sequence type can be made like this: `b = a[:]`. But this won't work with any other collection type. For those you could make this: `*b, = a`.
