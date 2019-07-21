@@ -22,13 +22,16 @@ def isCryptSolution(crypt, solution):
     else:
         return False
 
+def isCryptSolution2(crypt, solution):
+    table = {ord(c): i for c,i in solution}
+    *translatedCrypt, = map(lambda x: x.translate(table), crypt)
+
+    return (not any(s.startswith('0') and len(s) != 1 for s in translatedCrypt) and
+            int(translatedCrypt[0]) + int(translatedCrypt[1]) == int(translatedCrypt[2]))
 
 
-crypt= ["AA", 
- "BB", 
- "AA"]
+crypt = ["AA", "B", "AA"]
 solution= [["A","1"], 
- ["B","0"]]
+           ["B","0"]]
 
-
-print(isCryptSolution(crypt, solution))
+print(isCryptSolution2(crypt, solution))
