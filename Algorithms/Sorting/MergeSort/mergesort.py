@@ -46,7 +46,7 @@ def merge(lst1, lst2):
 from timeit import timeit
 
 t = timeit(
-    "lst = [randint(-10_000, 10_000) for i in range(100_000)]; mergesort(lst)",
+    "lst = [randint(-10_000, 10_000) for i in range(1_000_000)]; mergesort(lst)",
     setup="from random import randint",
     globals=globals(),
     number=1

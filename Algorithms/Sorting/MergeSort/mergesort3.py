@@ -1,5 +1,5 @@
 """
-Bottom-up mergesort implementation 2
+Bottom-up mergesort implementation 3
 """
 
 
@@ -23,25 +23,35 @@ def mergesort(lst, b=0, e=None):
 # l: index of the first element of the second list
 # e: indes of the last elemen of the lst (needed as the second sublist may be smaller than the first)
 def merge(lst, i, l, e):
+    b = i
     fullLength = l - i
+    m = i + fullLength
     n = l + fullLength if e + 1 >= l + fullLength else e + 1
 
-    while i < l and l < n:
+    result = []
+    while i < m and l < n:
         if lst[i] <= lst[l]:
+            result.append(lst[i])
+
             i += 1
         else:
-            tmp = lst[l]
-            lst[i + 1 : l + 1] = lst[i:l]
-            lst[i] = tmp
+            result.append(lst[l])
 
             l += 1
+    
+    if i < m:
+        result.extend(lst[i:m])
+    else:
+        result.extend(lst[l:n])
+
+    lst[b:n] = result
 
 
 # # Testing `merge`
 
-# lst = [1, 3, 5, 7, 2, 4, 6, 8]
+# lst = [1, 3, 5, 7, 10, 2, 4, 6, 8]
 
-# merge(lst, 0, 4, len(lst) - 1)
+# merge(lst, 0, 5, len(lst) - 1)
 # print(lst)
 
 
@@ -54,7 +64,7 @@ def merge(lst, i, l, e):
 from timeit import timeit
 
 t = timeit(
-    "lst = [randint(-10_000, 10_000) for i in range(100_000)]; mergesort(lst)",
+    "lst = [randint(-10_000, 10_000) for i in range(1_000_000)]; mergesort(lst); print(lst[::100]);",
     setup="from random import randint",
     globals=globals(),
     number=1,
