@@ -27,13 +27,12 @@ var wallsAndGates = function (rooms) {
 
     let queueHead = 0;
     let i = 0;
-    let room = null;
     let stepSize = null;
+    let room = null;
     while (queueHead < queue.length) {
         stepSize = queue.length - queueHead;
         for (let l = 0; l < stepSize; ++l) {
             room = queue[queueHead++];
-            rooms[room[0]][room[1]] = Math.min(i, rooms[room[0]][room[1]]);
             for (let [row, column] of [
                 [room[0] - 1, room[1]],
                 [room[0] + 1, room[1]],
@@ -41,9 +40,10 @@ var wallsAndGates = function (rooms) {
                 [room[0], room[1] + 1]
             ]) {
                 if ((0 <= row && row < m) &&
-                    (0 <= column && column < n) &&
-                    rooms[row][column] === INF) {
+                (0 <= column && column < n) &&
+                rooms[row][column] === INF) {
                     queue.push([row, column]);
+                    rooms[row][column] = i + 1;
                 }
             }
         }

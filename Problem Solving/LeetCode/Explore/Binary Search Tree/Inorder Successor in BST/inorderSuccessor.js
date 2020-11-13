@@ -1,0 +1,27 @@
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {TreeNode} p
+ * @return {TreeNode}
+ */
+var inorderSuccessor = function (root, p) {
+    let node = root;
+    let candidate = null;
+    
+    while (node !== null) {
+        if (node.val > p.val) {
+            candidate = node;
+            node = node.left;
+        } else {
+            node = node.right;
+        }
+    }
+    
+    return candidate;
+};

@@ -1,16 +1,18 @@
 const Queue = require('@datastructures-js/queue');
 
 
+const INF = 2 ** 31 - 1;
+const GATE = 0,
+const WALL = -1;
+
+
 /**
  * @param {number[][]} rooms
  * @return {void} Do not return anything, modify rooms in-place instead.
  */
 var wallsAndGates = function (rooms) {
-    const INF = 2 ** 31 - 1,
-          GATE = 0,
-          WALL = -1;
     const m = rooms.length,
-          n = (rooms[0] || []).length;
+        n = (rooms[0] || []).length;
 
     if (m === 0) {
         return;
@@ -35,10 +37,6 @@ var wallsAndGates = function (rooms) {
 };
 
 function BFS(rooms, gates) {
-    const INF = 2 ** 31 - 1,
-          GATE = 0,
-          WALL = -1;
-
     const queue = new Queue(gates);
     const visited = new Set(gates.map(gate => gate.toString()));
 
@@ -64,10 +62,6 @@ function BFS(rooms, gates) {
 }
 
 function neighbours(rooms, room) {
-    const INF = 2 ** 31 - 1,
-          GATE = 0,
-          WALL = -1;
-
     const result = [];
     for (let [row, column] of [
         [room[0] - 1, room[1]],
